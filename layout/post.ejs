@@ -111,6 +111,14 @@ layout: layout
                     <% } %>
                 </ul>
 
+                <!--友言评论框-->
+                <% if(config['uyan_enabled']) { %>
+                <!-- UY BEGIN -->
+                <div id="uyan_frame"></div>
+                <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=<%= config['uyan_uid'] %>"></script>
+                <!-- UY END -->
+                <% } %>
+
                 <% if(config['duoshuo_username']) { %>
                 <!-- 多说评论框 start -->
                 <div class="comment">
@@ -153,6 +161,7 @@ layout: layout
                 </div>
                 <!-- City版安装代码已完成 -->
                 <%}%>
+
             </div>
 
             <div class="hidden-xs col-sm-3 toc-col">
