@@ -28,6 +28,7 @@ layout: page
 
 </div>
 <% } else { %>
+<!--首页POST内容-->
 <div class="post-preview <%- post.layout === 'poetry' ? 'post-preview-poetry' : '' %>"
      style="background-image: url('<%- post["header-img"] ? config["cdn-url"] + post["header-img"] : config["post-default-img-mobile"] %>')">
     <a href="<%- config.root %><%- post.path %>">
@@ -35,6 +36,7 @@ layout: page
             <%- post.title || "未命名" %>
         </h2>
         <p class="post-meta">
+            <!--日期-->
             <i class="fa fa-calendar" aria-hidden="true"></i> <%= post.date.format(config.date_format) %>
         </p>
         <% if (post.subtitle && post.subtitle.length) { %>
