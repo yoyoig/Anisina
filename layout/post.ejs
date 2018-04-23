@@ -46,7 +46,7 @@ layout: layout
                     </span>
                     <div class="tags text-center">
                         <% page.tags.forEach(function(tag){ %>
-                        <a class="tag" href="<%= config.root %>tags/#<%= tag.name %>"
+                        <a class="tag" href="<%= config.root %>Tags/#<%= tag.name %>"
                            title="<%= tag.name %>"><%= tag.name %></a>
                         <% }) %>
                     </div>
@@ -162,50 +162,47 @@ layout: layout
                 <!-- City版安装代码已完成 -->
                 <%}%>
 
-            </div>
-
-            <div class="hidden-xs col-sm-3 toc-col">
-                <div class="toc-wrap">
-                    <%- toc(page.content, {list_number: false}) %>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <!-- Sidebar Container -->
-
-            <div class="
+                <div class="
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
                 sidebar-container">
 
-                <!-- Featured Tags -->
-                <% if(config['featured-tags']) { %>
-                <section>
-                    <!-- no hr -->
-                    <h5 class="text-center">
-                        <a href="<%= config.root %>tags/">FEATURED TAGS</a>
-                    </h5>
-                    <div class="tags">
-                        <% page.tags.forEach(function(tag){ %>
-                        <a class="tag" href="<%= config.root %>Tags/#<%= tag.name %>"
-                           title="<%= tag.name %>"><%= tag.name %></a>
-                        <% }) %>
-                    </div>
-                </section>
-                <% } %>
+                    <!-- Featured Tags -->
+                    <% if(config['featured-tags']) { %>
+                    <section>
+                        <!-- no hr -->
+                        <h5 class="text-center">
+                            <a href="<%= config.root %>tags/">FEATURED TAGS</a>
+                        </h5>
+                        <div class="tags">
+                            <% page.tags.forEach(function(tag){ %>
+                            <a class="tag" href="<%= config.root %>Tags/#<%= tag.name %>"
+                               title="<%= tag.name %>"><%= tag.name %></a>
+                            <% }) %>
+                        </div>
+                    </section>
+                    <% } %>
 
-                <!-- Friends Blog -->
-                <% if(config.friends) { %>
-                <div style="margin-top: 20px;">
-                    <h5 class="text-center">FRIENDS</h5>
-                    <ul class="list-inline text-center">
-                        <% config.friends.forEach(function(friend){ %>
-                        <li><a href="<%= friend.href %>"><%= friend.title %></a></li>
-                        <% }); %>
-                    </ul>
+                    <!-- Friends Blog -->
+                    <% if(config.friends) { %>
+                    <div style="margin-top: 20px;">
+                        <h5 class="text-center">FRIENDS</h5>
+                        <ul class="list-inline text-center">
+                            <% config.friends.forEach(function(friend){ %>
+                            <li><a href="<%= friend.href %>"><%= friend.title %></a></li>
+                            <% }); %>
+                        </ul>
+                    </div>
+                    <% } %>
                 </div>
-                <% } %>
+
+            </div>
+
+            <!--目录-->
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <%- toc(page.content, {list_number: false}) %>
+                </div>
             </div>
         </div>
 
